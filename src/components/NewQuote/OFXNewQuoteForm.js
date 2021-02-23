@@ -53,7 +53,7 @@ export default function OFXNewQuoteForm() {
             <Form.Label>Mobile</Form.Label>
             <InputGroup>
                 <InputGroup.Prepend>
-                  <Form.Control name="countryCode" required as="select" onChange={handleInputChange}  value={values.countryCode} style={{maxWidth: "75px"}}>
+                  <Form.Control name="countryCode" required as="select" onChange={handleInputChange}  value={values.countryCode} style={{maxWidth: "100px"}}>
                     <option value="">--- Select ---</option>
                     {CountryCodes.map(option => (
                       <option key={option.name} value={option.dial_code}>

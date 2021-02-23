@@ -4,7 +4,10 @@ import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
-import CurrenciesList from '../../config/CurrenciesList'
+import InputGroup from 'react-bootstrap/InputGroup';
+import CurrenciesList from '../../config/CurrenciesList';
+import CountryCodes from '../../config/CountryCodes';
+
 export default function OFXNewQuoteForm() {
   const {values, handleInputChange, handleSubmit} = useOFXQuoteForm();
   const [validated, setValidated] = useState(false);
@@ -33,7 +36,7 @@ export default function OFXNewQuoteForm() {
             </Form.Group>
             <Form.Group as={Col} controlId="formGridLastName">
               <Form.Label>Last Name</Form.Label>
-              <Form.Control name="lastName" required type="text" placeholder="Password" onChange={handleInputChange}  value={values.lastName}/>
+              <Form.Control name="lastName" required type="text" placeholder="Enter Last Name" onChange={handleInputChange}  value={values.lastName}/>
               <Form.Control.Feedback type="invalid">
                 Please Enter Last Name.
               </Form.Control.Feedback>
@@ -46,9 +49,21 @@ export default function OFXNewQuoteForm() {
                 Please Enter Valid Email.
               </Form.Control.Feedback>
           </Form.Group>
-          <Form.Group controlId="formGridAddress2">
+          <Form.Group controlId="formGridMobile">
             <Form.Label>Mobile</Form.Label>
-            <Form.Control name="mobile" placeholder="Enter Mobile" />
+            <InputGroup>
+                <InputGroup.Prepend>
+                  <Form.Control name="countryCode" required as="select" onChange={handleInputChange}  value={values.countryCode} style={{maxWidth: "75px"}}>
+                    <option value="">--- Select ---</option>
+                    {CountryCodes.map(option => (
+                      <option key={option.name} value={option.dial_code}>
+                        {option.dial_code}
+                      </option>
+                    ))}
+                  </Form.Control>
+                </InputGroup.Prepend>
+              <Form.Control name="mobile" placeholder="Enter Mobile" onChange={handleInputChange}  value={values.mobile}/>
+            </InputGroup>
           </Form.Group>
           <Form.Row>
             <Form.Group as={Col} controlId="formGridFromCurrency">

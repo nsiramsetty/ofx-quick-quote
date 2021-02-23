@@ -12,6 +12,13 @@ const useOFXQuoteForm = () => {
     if (event) {
       event.preventDefault();
     }
+    if(inputs.fromCurrency === inputs.toCurrency){
+        dispatch({
+                type: STATE_UPDATE_STATE,
+                payload: { view: STATE_VIEW_ERROR, error: { message: "From and To Currency must be different" } },
+              });
+        return;
+    }
     dispatch({
       type: STATE_UPDATE_STATE,
       payload: { view: STATE_VIEW_LOADING },
@@ -24,7 +31,7 @@ const useOFXQuoteForm = () => {
     }).catch((err) => {
       dispatch({
         type: STATE_UPDATE_STATE,
-        payload: { view: STATE_VIEW_ERROR, error: { message: err?.message || DEFAULT_ERROR } },
+        payload: { view: STATE_VIEW_ERROR, error: { message: err?.response?.data?.Message || DEFAULT_ERROR } },
       });
     });
   }

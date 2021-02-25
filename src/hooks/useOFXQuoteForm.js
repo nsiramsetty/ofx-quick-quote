@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { DEFAULT_ERROR, STATE_UPDATE_STATE, STATE_VIEW_NEW_QUOTE, STATE_VIEW_DISPLAY_QUOTE, STATE_VIEW_ERROR, STATE_VIEW_LOADING } from '../utils/Constants';
-import { useOFXQuoteContext } from '../state/useOFXQuoteContext';
+import { useOFXQuoteContext } from '../state/UseOFXQuoteContext';
 import getOFXQuote from '../service/GetOFXQuote';
 import defaultVales from '../config/DefaultValues';
 

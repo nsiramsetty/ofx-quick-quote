@@ -3,7 +3,7 @@ import { useOFXQuoteContext } from '../../state/useOFXQuoteContext';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
-import useOFXQuoteForm from '../../hooks/useOFXQuoteForm';
+import useOFXQuoteForm from '../../hooks/UseOFXQuoteForm';
 import {CurrencyData} from '../../config/CurrenciesList';
 
 export default function OFXViewQuote() {

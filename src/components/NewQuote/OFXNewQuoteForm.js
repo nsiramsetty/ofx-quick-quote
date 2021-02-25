@@ -1,5 +1,5 @@
 import React,{useState} from 'react';
-import useOFXQuoteForm from '../../hooks/useOFXQuoteForm';
+import useOFXQuoteForm from '../../hooks/UseOFXQuoteForm';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -25,10 +25,10 @@ export default function OFXNewQuoteForm() {
   return (
     <Row>
       <Col>
-        <Form noValidate validated={validated} onSubmit={handleValidation}>
+        <Form noValidate validated={validated} onSubmit={handleValidation} data-testid="new-quote-form">
           <Form.Row>
-            <Form.Group as={Col} controlId="formGridFirstName">
-              <Form.Label>FirstName</Form.Label>
+            <Form.Group as={Col} controlId="formGridFirstName" data-testid="field-first-name">
+              <Form.Label>First Name</Form.Label>
               <Form.Control name="firstName" required type="text" placeholder="Enter First Name" onChange={handleInputChange} value={values.firstName}/>
               <Form.Control.Feedback type="invalid">
                 Please Enter First Name.
@@ -106,7 +106,7 @@ export default function OFXNewQuoteForm() {
           </Form.Row>
           <Form.Row>
             <Form.Group as={Col} controlId="formGridSubmit" className="text-center">
-              <Button variant="primary" type="submit" size="lg">Get Quote</Button>
+              <Button variant="primary" type="submit" size="lg" data-testid="get-quote-button">Get Quote</Button>
             </Form.Group>
           </Form.Row>
         </Form>

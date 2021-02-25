@@ -34,7 +34,7 @@ function OFXQuoteLayout() {
                 </Card.Body>
                 <Card.Footer>
                     <Row>
-                        <Col><h5 className="small text-center"> Designed &amp; Developed by Naresh Siramsetty</h5></Col>
+                        <Col><h5 className="small text-center" data-testid="copyright">Designed &amp; Developed by Naresh Siramsetty</h5></Col>
                     </Row>
                 </Card.Footer>
             </Card>

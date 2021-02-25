@@ -3,7 +3,7 @@ import OFXViewQuote from '../ViewQuote/OFXViewQuote';
 import Loader from '../Loader/Loader';
 import Error from '../Error/Error';
 import { STATE_VIEW_DISPLAY_QUOTE, STATE_VIEW_ERROR, STATE_VIEW_LOADING, STATE_VIEW_NEW_QUOTE } from '../../utils/Constants';
-import { useOFXQuoteContext } from '../../state/useOFXQuoteContext';
+import { useOFXQuoteContext } from '../../state/UseOFXQuoteContext';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';

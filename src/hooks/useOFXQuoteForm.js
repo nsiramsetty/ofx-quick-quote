@@ -15,7 +15,7 @@ const useOFXQuoteForm = () => {
     if(inputs.fromCurrency === inputs.toCurrency){
         dispatch({
                 type: STATE_UPDATE_STATE,
-                payload: { view: STATE_VIEW_ERROR, error: { message: "From and To Currency must be different" } },
+                payload: { view: STATE_VIEW_ERROR, error: { message: "From and To Currency must be different." } },
               });
         return;
     }
